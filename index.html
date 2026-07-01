@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Dose de Motivação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #a29bfe);
+            color: #2d3436;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #6c5ce7;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .author {
+            font-size: 1rem;
+            color: #636e72;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #5b4bc4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Acredite em Você</h1>
+        <p class="quote">"O único lugar onde o sucesso vem antes do trabalho é no dicionário."</p>
+        <p class="author">— Albert Einstein</p>
+        <button class="btn" onclick="mudarFrase()">Nova Frase</button>
+    </div>
+
+    <script>
+        // Lista de frases motivacionais
+        const frases = [
+            { texto: "O único lugar onde o sucesso vem antes do trabalho é no dicionário.", autor: "Albert Einstein" },
+            { texto: "Não espere por oportunidades, crie-as.", autor: "Anônimo" },
+            { texto: "O que você faz hoje pode melhorar todos os seus amanhãs.", autor: "Ralph Marston" },
+            { texto: "A persistência é o caminho do êxito.", autor: "Charles Chaplin" },
+            { texto: "Comece onde você está. Use o que você tem. Faça o que você pode.", autor: "Arthur Ashe" }
+        ];
+
+        function mudarFrase() {
+            // Seleciona uma frase aleatória que não seja a mesma atual
+            const indiceAleatorio = Math.floor(Math.random() * frases.length);
+            
+            // Atualiza o texto na tela
+            document.querySelector('.quote').innerText = `"${frases[indiceAleatorio].texto}"`;
+            document.querySelector('.author').innerText = `— ${frases[indiceAleatorio].autor}`;
+        }
+    </script>
+
+</body>
+</html>
